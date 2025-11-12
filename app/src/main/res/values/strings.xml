@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Nagomi Spa</string>
+    <string name="notification_icon">Notification Icon</string>
+    <string name="profile_image_desc">Profile picture of the user</string>
+
+    <!-- Strings for activity_notification.xml -->
+    <string name="notification_icon_description">Notification bell icon</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="notification_messages_combined">Your therapist Sarah is ready in Room 3.\n\nDon’t
+        forget your 5% loyalty discount next visit!
+    </string>
+
+    <!-- Your existing strings like app_name will be here -->
+    <!-- <string name="app_name">NagomiSpa</string> -->
+</resources>

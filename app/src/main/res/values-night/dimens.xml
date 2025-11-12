@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Layout Padding -->
+    <dimen name="layout_padding_large">24dp</dimen>
+
+    <!-- Margins & Spacing -->
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="line_spacing_small">4dp</dimen>
+
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_large">130dp</dimen> <!-- Using same value for width/height for simplicity -->
+
+    <!-- Font Sizes -->
+    <dimen name="font_size_medium">16sp</dimen>
+    <dimen name="font_size_xlarge">24sp</dimen>
+</resources>

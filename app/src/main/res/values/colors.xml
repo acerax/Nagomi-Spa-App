@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- Brand Colors -->
+    <color name="brand_brown">#5D4037</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary_light">#F2F1F1</color>
+    <color name="text_secondary_light">#FDFCFB</color>
+
+    <!-- You can also add other colors from your design here -->
+    <color name="accent_pink">#FDF6F5</color>
+</resources>

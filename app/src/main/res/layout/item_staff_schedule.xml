@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="7dp"
+    app:cardBackgroundColor="#F8F4F2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <!-- PROFILE -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profilePic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="#E8D4CC">
+
+                <TextView
+                    android:id="@+id/profileInitials"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MS"
+                    android:textColor="#6D4C41"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- STAFF INFO -->
+        <LinearLayout
+            android:id="@+id/staffInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/profilePic"
+            app:layout_constraintTop_toTopOf="@id/profilePic"
+            app:layout_constraintBottom_toBottomOf="@id/profilePic"
+            app:layout_constraintEnd_toStartOf="@id/editButton">
+
+            <TextView
+                android:id="@+id/staffName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clea Santos"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#1A0F0A" />
+
+            <TextView
+                android:id="@+id/staffRole"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Massage Therapist"
+                android:textColor="#6D4C41"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/clientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Client: Sarah Lopez"
+                android:textColor="#8D6E63"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <!-- EDIT -->
+        <ImageButton
+            android:id="@+id/editButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_edit"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#6D4C41"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/profilePic"
+            app:layout_constraintBottom_toBottomOf="@id/profilePic" />
+
+        <!-- DIVIDER -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#D7CCC8"
+            app:layout_constraintTop_toBottomOf="@id/profilePic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- WEEKLY SCHEDULE -->
+        <LinearLayout
+            android:id="@+id/weeklySchedule"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- MONDAY -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="Monday"
+                    android:textStyle="bold"
+                    android:textColor="#2D1E16"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:background="#E0D7D4"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mondayHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM - 5:00 PM"
+                    android:textColor="#6D4C41"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- TUESDAY -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tuesday"
+                    android:textStyle="bold"
+                    android:textColor="#2D1E16"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:background="#E0D7D4"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tuesdayHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM - 5:00 PM"
+                    android:textColor="#6D4C41"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- WEEKEND -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="Weekend"
+                    android:textStyle="bold"
+                    android:textColor="#2D1E16"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:background="#E0D7D4"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/weekendHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textStyle="italic"
+                    android:textColor="#8D6E63"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- BOTTOM -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/weeklySchedule"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/totalHours"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total: 40 hrs/week"
+                android:textStyle="bold"
+                android:textColor="#5D4037"
+                android:textSize="13sp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/statusChip"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="Active"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                app:chipCornerRadius="16dp"
+                app:chipBackgroundColor="#4CAF50" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

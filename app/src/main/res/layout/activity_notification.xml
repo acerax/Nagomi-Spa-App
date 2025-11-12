@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/spa_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Header Section -->
+        <ImageView
+            android:id="@+id/notificationIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_notifications"
+            android:tint="#8E3B3B"
+            android:contentDescription="Notification icon" />
+
+        <TextView
+            android:id="@+id/notificationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Staff Schedule Reminders"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:shadowColor="#80000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4" />
+
+        <!-- Header Subline -->
+        <TextView
+            android:id="@+id/headerSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="24dp"
+            android:text="Review, edit, and send reminders to staff."
+            android:textColor="#E0E0E0"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textAlignment="center" />
+
+        <!-- Card 1 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Header Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📅 Tomorrow's Shift"
+                        android:textColor="#8E3B3B"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnRemind1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Remind"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:backgroundTint="#FF9800"
+                        android:textColor="#FFFFFF"
+                        app:cornerRadius="12dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Staff -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Staff:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/staffName1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Santos, Maria"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Phone -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Phone:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/phone1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="+63 912 345 6789"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:inputType="phone"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Date -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Date:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/date1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="November 10, 2025"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Time -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Time:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/time1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10:00 AM - 11:30 AM"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Edit Button Bottom Left -->
+                <Button
+                    android:id="@+id/btnEdit1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_gravity="start"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:backgroundTint="#6D4C41"
+                    android:textColor="#FFFFFF"
+                    app:cornerRadius="12dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 2 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Header Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📅 Tomorrow's Shift"
+                        android:textColor="#8E3B3B"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnRemind2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Remind"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:backgroundTint="#FF9800"
+                        android:textColor="#FFFFFF"
+                        app:cornerRadius="12dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Staff -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Staff:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/staffName2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Reyes, Ana"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Phone -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Phone:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/phone2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="+63 923 456 7890"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:inputType="phone"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Date -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Date:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/date2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="November 10, 2025"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Time -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Time:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/time2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2:00 PM - 3:00 PM"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Edit Button Bottom Left -->
+                <Button
+                    android:id="@+id/btnEdit2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_gravity="start"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:backgroundTint="#6D4C41"
+                    android:textColor="#FFFFFF"
+                    app:cornerRadius="12dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 3 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Header Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📅 Tomorrow's Shift"
+                        android:textColor="#8E3B3B"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnRemind3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Remind"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:backgroundTint="#FF9800"
+                        android:textColor="#FFFFFF"
+                        app:cornerRadius="12dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Staff -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Staff:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/staffName3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Garcia, Sofia"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Phone -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Phone:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/phone3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="+63 934 567 8901"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:inputType="phone"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Date -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Date:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/date3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="November 10, 2025"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Time -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Time:"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/time3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4:00 PM - 5:00 PM"
+                        android:textColor="#3E2723"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+
+                <!-- Edit Button Bottom Left -->
+                <Button
+                    android:id="@+id/btnEdit3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_gravity="start"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:backgroundTint="#6D4C41"
+                    android:textColor="#FFFFFF"
+                    app:cornerRadius="12dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Global Actions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnRemindAll"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:text="Remind All"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="16dp"
+                android:backgroundTint="#6D4C41" />
+
+            <Button
+                android:id="@+id/btnScheduleDaily"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="Auto 6:00 PM"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="16dp"
+                android:backgroundTint="#8E3B3B" />
+        </LinearLayout>
+
+        <!-- Info Message (Admin-focused) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="💡 Admin only: tap Remind to send now, or enable Auto 6:00 PM to dispatch next-day shift reminders automatically."
+            android:textColor="#E0E0E0"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textAlignment="center"
+            android:padding="12dp" />
+
+    </LinearLayout>
+</ScrollView>

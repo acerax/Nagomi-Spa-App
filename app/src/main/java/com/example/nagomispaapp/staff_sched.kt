@@ -1,31 +1,23 @@
 package com.example.nagomispaapp
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 
 class staff_sched : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_staff_sched)
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         // Initialize RecyclerView
         val recyclerView = findViewById<RecyclerView>(R.id.staffScheduleRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // TWO DIFFERENT STAFF EXAMPLES
-        val staffData = listOf(
+        // Sample schedule data
+        val scheduleData = listOf(
             StaffModel(
                 initials = "CS",
                 name = "Clea Santos",
@@ -50,6 +42,11 @@ class staff_sched : AppCompatActivity() {
             )
         )
 
-        recyclerView.adapter = StaffScheduleAdapter(staffData)
+        recyclerView.adapter = StaffScheduleAdapter(scheduleData)
+
+        // Add Schedule button - Navigate to AddScheduleActivity
+        findViewById<MaterialButton>(R.id.addScheduleButton).setOnClickListener {
+            startActivity(Intent(this, AddScheduleActivity::class.java))
+        }
     }
 }

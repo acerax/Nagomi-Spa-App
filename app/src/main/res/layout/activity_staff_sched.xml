@@ -27,7 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/pageTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Staff Scheduler"
@@ -37,7 +36,6 @@
             android:fontFamily="sans-serif-medium" />
 
         <TextView
-            android:id="@+id/pageSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Manage staff schedules and clients"
@@ -107,7 +105,6 @@
             android:src="@android:drawable/ic_media_next"
             android:background="?attr/selectableItemBackgroundBorderless"
             app:tint="#6D4C41" />
-
     </LinearLayout>
 
     <!-- BUTTONS -->
@@ -124,11 +121,11 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/addStaffButton"
+            android:id="@+id/addScheduleButton"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="Add Staff"
+            android:text="Add Schedule"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textSize="15sp"

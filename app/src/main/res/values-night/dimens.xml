@@ -9,7 +9,7 @@
     <dimen name="line_spacing_small">4dp</dimen>
 
     <!-- Icon Sizes -->
-    <dimen name="icon_size_large">130dp</dimen> <!-- Using same value for width/height for simplicity -->
+    <dimen name="icon_size_large">130dp</dimen>
 
     <!-- Font Sizes -->
     <dimen name="font_size_medium">16sp</dimen>

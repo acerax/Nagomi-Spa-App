@@ -12,6 +12,11 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
 class Login : AppCompatActivity() {
+
+    // Hardcoded credentials
+    private val VALID_EMAIL = "admin@nagomispa.com"
+    private val VALID_PASSWORD = "admin123"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -33,7 +38,6 @@ class Login : AppCompatActivity() {
         val emailInput = findViewById<TextInputEditText>(R.id.emailInput)
         val passwordInput = findViewById<TextInputEditText>(R.id.passwordInput)
         val loginButton = findViewById<MaterialButton>(R.id.loginButton)
-        val googleLoginButton = findViewById<MaterialButton>(R.id.googleLoginButton)
 
         // Sign In button click listener
         loginButton.setOnClickListener {
@@ -53,8 +57,8 @@ class Login : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Simple validation (in a real app, you'd validate against a database)
-            if (email.isNotEmpty() && password.isNotEmpty()) {
+            // Validate against hardcoded credentials
+            if (email == VALID_EMAIL && password == VALID_PASSWORD) {
                 // Show success message
                 Toast.makeText(
                     this,
@@ -67,16 +71,18 @@ class Login : AppCompatActivity() {
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 finish()
-            }
-        }
+            } else {
+                // Show error message for invalid credentials
+                Toast.makeText(
+                    this,
+                    "Invalid email or password. Please try again.",
+                    Toast.LENGTH_LONG
+                ).show()
 
-        // Google login button (placeholder)
-        googleLoginButton.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Google Sign-In coming soon!",
-                Toast.LENGTH_SHORT
-            ).show()
+                // Clear password field for security
+                passwordInput.text?.clear()
+                passwordInput.requestFocus()
+            }
         }
 
         // Forgot Password click listener

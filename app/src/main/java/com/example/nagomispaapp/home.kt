@@ -16,7 +16,7 @@ class HomeActivity : AppCompatActivity() {
         val notificationIconBtn = findViewById<ImageButton>(R.id.notificationIconBtn)
         notificationIconBtn.setOnClickListener {
             try {
-                val intent = Intent(this, notification::class.java)
+                val intent = Intent(this, NotificationActivity::class.java)
                 startActivity(intent)
             } catch (e: Exception) {
                 Toast.makeText(

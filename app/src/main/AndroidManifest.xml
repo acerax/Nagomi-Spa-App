@@ -34,7 +34,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".notification"
+            android:name=".NotificationActivity"
             android:exported="false" />
 
         <activity

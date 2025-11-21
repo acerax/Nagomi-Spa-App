@@ -9,7 +9,6 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.text.SimpleDateFormat
 import java.util.*
 
 class AddScheduleActivity : AppCompatActivity() {
@@ -44,24 +43,16 @@ class AddScheduleActivity : AppCompatActivity() {
         setupServiceSpinner()
 
         // Date picker
-        dateInput.setOnClickListener {
-            showDatePicker()
-        }
+        dateInput.setOnClickListener { showDatePicker() }
 
         // Time picker
-        timeInput.setOnClickListener {
-            showTimePicker()
-        }
+        timeInput.setOnClickListener { showTimePicker() }
 
         // Save button
-        saveScheduleButton.setOnClickListener {
-            saveSchedule()
-        }
+        saveScheduleButton.setOnClickListener { saveSchedule() }
 
         // Cancel button
-        cancelButton.setOnClickListener {
-            finish()
-        }
+        cancelButton.setOnClickListener { finish() }
     }
 
     private fun loadStaffList() {
@@ -71,7 +62,7 @@ class AddScheduleActivity : AppCompatActivity() {
 
             val staffList = mutableListOf<String>()
             reader.forEachLine { line ->
-                if (!line.startsWith("Name")) { // Skip header
+                if (!line.startsWith("Name")) {     // Skip header
                     val columns = line.split(",")
                     if (columns.isNotEmpty()) {
                         staffList.add(columns[0].trim())
@@ -145,12 +136,13 @@ class AddScheduleActivity : AppCompatActivity() {
 
         // Validation
         if (staffName.isEmpty() || clientName.isEmpty() || staffNumber.isEmpty() ||
-            date.isEmpty() || time.isEmpty() || service.isEmpty()) {
+            date.isEmpty() || time.isEmpty() || service.isEmpty()
+        ) {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // TODO: Save schedule to database or storage
+        // TODO: Save schedule to database or local storage
         Toast.makeText(this, "Schedule saved successfully!", Toast.LENGTH_SHORT).show()
         finish()
     }

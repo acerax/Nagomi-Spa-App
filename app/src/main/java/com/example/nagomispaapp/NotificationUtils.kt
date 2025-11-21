@@ -16,6 +16,7 @@ object NotificationUtils {
         val notificationManager =
             context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
+        // Create notification channel (Android 8+)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 CHANNEL_ID,
@@ -29,7 +30,9 @@ object NotificationUtils {
             notificationManager.createNotificationChannel(channel)
         }
 
-        val openIntent = Intent(context, notification::class.java)
+        // When clicked → open notification screen
+        val openIntent = Intent(context, NotificationActivity::class.java)
+
         val pendingIntent = PendingIntent.getActivity(
             context,
             0,
@@ -38,6 +41,7 @@ object NotificationUtils {
         )
 
         val id = System.currentTimeMillis().toInt()
+
         val n = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notifications)
             .setContentTitle(title)
